@@ -96,7 +96,7 @@ class ProductService implements ProductInterface {
             }
 
             $product = new Product();
-            $product->prroduct_name = $request->product_name;
+            $product->product_name = $request->product_name;
             $product->price = $request->price;
             $product->images_path = $accessToken;
             $product->stock = $request->stock;
@@ -167,7 +167,7 @@ class ProductService implements ProductInterface {
                     $accessToken = $createdData->data->access_token;
                 }
 
-                $product->prroduct_name = $request->product_name;
+                $product->product_name = $request->product_name;
                 $product->price = $request->price;
                 $product->images_path = $accessToken;
                 $product->stock = $request->stock;
