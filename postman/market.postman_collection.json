@@ -1,0 +1,460 @@
+{
+	"info": {
+		"_postman_id": "8bdb1d2b-6b36-4d9e-92b8-17cb4589dd0f",
+		"name": "market",
+		"description": "## This collection contains requests from Market APIs.\n\nIt contains following requests\n\n- Create a product.\n- Get details for all products.\n- Get details for a specific product.\n- Update details for a specific product.\n- Delete details of specific product.\n- Create a seller.\n- Get details for all sellers.\n- Get details for a specific seller.\n- Update details for a specific seller.\n- Delete details of specific seller.\n- Assign a productvsseller.\n- Get details for all productvsseller.\n- Get details for specific sellers by product id.\n- Get details for specific products by seller id.\n- Update details for a specific productvsseller.\n- Unassign details of specific productvsseller.\n    \n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13063414"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_name",
+									"value": "Red roce",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ASUS/OneDrive/Pictures/IMG_20210614_172218.jpg"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This are red roces",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/product",
+						"description": "API end point to create product in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_name",
+									"value": "Red roces",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ASUS/OneDrive/Pictures/IMG_20210614_172218.jpg"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This are red roces",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{server}}/api/product/{id}",
+						"description": "API end point to update product in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "View All Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/api/product/viewall",
+						"description": "API end point to view all products in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "View Product by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/api/product/view/{id}",
+						"description": "API end point to view product by id in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{server}}/api/product/{id}",
+						"description": "API end point to delete product by id in the system."
+					},
+					"response": []
+				}
+			],
+			"description": "## This set of requests use for all products in the system.\n\nIt contains following requests\n\n- Create a product.\n- Get details for all products.\n- Get details for a specific product.\n- Update details for a specific product.\n- Delete details of specific product."
+		},
+		{
+			"name": "Product Vs Seller",
+			"item": [
+				{
+					"name": "Assign Product vs Seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "seller_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "seller_price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "seller_stock",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/productvsseller/assign",
+						"description": "API end point to assign productvsseller in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product Vs Seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "seller_price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "seller_stock",
+									"value": "20",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{server}}/api/productvsseller/update",
+						"description": "API end point to update productvsseller in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "View All Product Vs Seller",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/api/productvsseller/viewall",
+						"description": "API end point to view all productvsseller in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "View Product by Seller id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/api/productvsseller/byseller/{id}",
+						"description": "API end point to view products by given seller id in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "View Seller by Product id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/api/productvsseller/byproduct/{id}",
+						"description": "API end point to view sellers by given product id in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Product Vs Seller Unassign",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "seller_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{server}}/api/productvsseller/unassign",
+						"description": "API end point to unassign productvsseller in the system."
+					},
+					"response": []
+				}
+			],
+			"description": "## This set of requests use for all productvsseller in the system.\n\nIt contains following requests\n\n- Assign a productvsseller.\n- Get details for all productvsseller.\n- Get details for specific sellers by product id.\n- Get details for specific products by seller id..\n- Update details for a specific productvsseller.\n- Unassign details of specific productvsseller."
+		},
+		{
+			"name": "Seller",
+			"item": [
+				{
+					"name": "Create Seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "seller_name",
+									"value": "seller1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "seller@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Seller123",
+									"type": "text"
+								},
+								{
+									"key": "active_status",
+									"value": "INACTIVE",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/api/seller",
+						"description": "StartFragment\n\nAPI end point to create product in the system.\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "seller_name",
+									"value": "Seller1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "seller@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Seller321",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{server}}/api/seller/{id}",
+						"description": "StartFragment\n\nAPI end point to update product in the system.\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "View All Sellers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/api/seller/viewall",
+						"description": "API end point to view all products in the system.\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "View Seller by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/api/seller/view/{id}",
+						"description": "API end point to view seller by id in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Seller",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{server}}/api/seller/{id}",
+						"description": "API end point to delete seller by id in the system."
+					},
+					"response": []
+				}
+			],
+			"description": "## This set of requests use for all sellers in the system.\n\nIt contains following requests\n\n- Create a seller.\n- Get details for all sellers.\n- Get details for a specific seller.\n- Update details for a specific seller.\n- Delete details of specific seller"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/app",
+			"type": "string"
+		}
+	]
+}
